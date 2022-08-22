@@ -9,7 +9,7 @@ import {
 import { ApiProperty } from '@nestjs/swagger';
 import { Role } from 'src/roles/roles.model';
 import { UserRoles } from 'src/roles/user-roles.model';
-import { Post } from 'src/posts/post.model';
+import { Post } from 'src/posts/posts.model';
 
 interface UserCreationAttrs {
   email: string;
