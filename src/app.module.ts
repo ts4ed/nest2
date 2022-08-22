@@ -10,6 +10,9 @@ import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
+import { PostsModule } from './posts/posts.module';
+import { Post } from './posts/post.model';
+import { FilesModule } from './files/files.module';
 
 @Module({
   controllers: [AuthController],
@@ -23,13 +26,15 @@ import { JwtModule } from '@nestjs/jwt';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [User, Role, UserRoles],
+      models: [User, Role, UserRoles, Post],
       autoLoadModels: true,
     }),
     UsersModule,
     RolesModule,
     AuthModule,
     JwtModule,
+    PostsModule,
+    FilesModule,
   ],
 })
 export class AppModule {}
